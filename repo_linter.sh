@@ -5,10 +5,6 @@ REPO_TO_LINT=$(
 	git diff origin/main -- readme.md |
 	# Look for changes (indicated by lines starting with +).
 	grep ^+ |
-	# Get the line that includes the readme.
-	grep -Eo 'https.*#readme' |
-	# Get just the URL.
-	sed 's/#readme//')
 
 # If there's no repo found, exit quietly.
 if [ -z "$REPO_TO_LINT" ]; then
